@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lista tareas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://unpkg.com/@ionic/core@4.0.0-beta.7/dist/ionic.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@ionic/core@4.0.0-beta.7/css/ionic.bundle.css">
+
+  <script src="cordova.js"></script>
+  <script src="todo.js"></script>
+</head>
+
+<body onload="onLoad()">
+  <ion-app>
+    <ion-header>
+      <ion-toolbar color="secondary">
+        <ion-title>ToDo!</ion-title>
+        <ion-buttons slot="secondary">
+          <ion-button onclick="deleteItem(false)"  color="primary"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-button>  
+          <ion-button onclick="toggleReorder()"    color="primary"><ion-icon slot="icon-only" name="repeat"></ion-icon></ion-button>
+          <ion-button onclick="addEditItem(false)" color="primary"><ion-icon slot="icon-only" name="add-circle"></ion-icon></ion-button>
+        </ion-buttons>
+      </ion-toolbar>       
+    </ion-header>
+
+    <ion-content>
+      <ion-alert-controller></ion-alert-controller>
+      <ion-modal-controller></ion-modal-controller>
+      <ion-tabs color="danger">
+        <ion-tab label="Institut" icon="school">
+          <ion-list lines="full">
+            <ion-reorder-group></ion-reorder-group>
+          </ion-list>
+        </ion-tab>
+        <ion-tab label="Casa" icon="home">
+          <ion-list lines="full">
+            <ion-reorder-group></ion-reorder-group>
+          </ion-list>
+        </ion-tab>
+	<ion-tab label="Altra" icon="bicycle">
+          <ion-list lines="full">
+            <ion-reorder-group></ion-reorder-group>
+          </ion-list>
+        </ion-tab>		
+      </ion-tabs>
+    </ion-content>
+  </ion-app>
+</body>
+</html>
